@@ -46,7 +46,6 @@ Three key metrics are tracked for each process:
 - Allows important tasks to be prioritized
 - Without aging, can cause priority inversion and starvation
 
----
 
 ## Test Scenarios
 
@@ -72,7 +71,6 @@ SJF outperforms FCFS by 12% in average wait time. By executing shorter jobs firs
 
 **Conclusion:** When workloads have varying CPU burst lengths, SJF is the clear winner for CPU-heavy scenarios.
 
----
 
 ### Scenario B: I/O-Heavy Workload
 
@@ -104,8 +102,6 @@ This is the most important finding of the project. Why do all algorithms converg
 **Real-World Implication:** In real operating systems, I/O operations are asynchronous. When one process does I/O, others can use the CPU. This allows parallelism and makes scheduling more impactful. However, this simplified model doesn't capture that benefit.
 
 **Conclusion:** Scheduling algorithm choice is irrelevant when I/O dominates. OS improvements to I/O handling (asynchronous I/O, buffering, multiple queues) would have more impact than algorithm selection.
-
----
 
 ### Scenario C: Balanced Workload with Priority
 
@@ -139,8 +135,6 @@ FCFS outperforms optimized algorithms in this scenario:
 
 **Conclusion:** When process arrival is distributed and workloads are balanced, FCFS's simplicity and fairness prove superior to complex optimizations.
 
----
-
 ## Performance Summary
 
 ### Wait Time (Lower is Better)
@@ -160,8 +154,6 @@ FCFS outperforms optimized algorithms in this scenario:
 | Balanced      | 94.6* | 99.4  | 98.8     |
 
 *Best performer
-
----
 
 ## Key Findings and Conclusions
 
@@ -195,8 +187,6 @@ Long-running processes can be indefinitely delayed by steady arrivals of short j
 - Distributed arrivals: FCFS simplicity is competitive
 - Random arrivals: Varies case by case
 
----
-
 ## Real-World Algorithm Selection
 
 ### Use FCFS When:
@@ -226,7 +216,6 @@ Modern operating systems use **hybrid approaches:**
 - Separate I/O and CPU scheduling
 - Adaptive algorithms that adjust based on system state
 
----
 
 ## Running the Simulation
 
@@ -258,16 +247,12 @@ P2    43       82           43
 Averages: Wait=81.6  TAT=120.6  Response=81.6
 ```
 
----
-
 ## Project Files
 
 - **main.py** - Main simulation runner and benchmarking script
 - **simulation.py** - Core simulation engine with Process class and scheduling algorithms
 - **RESULTS.txt** - Complete experimental results from all 9 scenarios
-- **README.md** - This file (project documentation and analysis)
-
----
+- **README.md** - Project documentation and analysis
 
 ## Algorithm Implementation Details
 
@@ -288,8 +273,6 @@ Averages: Wait=81.6  TAT=120.6  Response=81.6
 - Time Complexity: O(n log n) per scheduling decision
 - Note: Without aging, can cause indefinite starvation
 
----
-
 ## Simulation Assumptions
 
 1. **Single CPU:** Only one processor available
@@ -299,8 +282,6 @@ Averages: Wait=81.6  TAT=120.6  Response=81.6
 5. **Deterministic Bursts:** CPU and I/O times are known in advance
 6. **Instant Context Switch:** No switching overhead modeled
 7. **No Priority Aging:** Priority values don't change over time
-
----
 
 ## Potential Improvements
 
@@ -315,7 +296,6 @@ To make the simulation more realistic:
 7. **Stochastic Bursts:** Use probability distributions for burst times
 8. **Predictive Algorithms:** Implement machine learning for job length estimation
 
----
 
 ## Conclusion
 
